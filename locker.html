@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+<link rel="stylesheet" href="locker_style.css">
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            
+            <div id="create-vault-section" class="vault-card p-4 mb-4">
+                <div class="text-center mb-4">
+                    <i class="fa-solid fa-folder-plus text-primary fs-1 mb-3"></i>
+                    <h3 class="fw-bold">Initialize New Storage</h3>
+                    <p class="text-secondary">Set a unique passkey to create your private storage linked to your email.</p>
+                </div>
+                
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label small text-secondary">EMAIL ADDRESS</label>
+                        <input type="email" class="form-control bg-black text-white border-secondary" placeholder="user@example.com" readonly value="user@example.com">
+                        <small class="text-muted">Storage will be created under this identity.</small>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label small text-secondary">CREATE PASSKEY</label>
+                        <input type="password" class="form-control bg-black text-white border-secondary" placeholder="Enter a strong passkey">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 fw-bold">Create My Vault</button>
+                </form>
+            </div>
+
+            <hr class="border-secondary my-5">
+
+            <div id="access-vault-section" class="vault-card p-4">
+                <div class="text-center mb-4">
+                    <i class="fa-solid fa-vault text-warning fs-1 mb-3"></i>
+                    <h3 class="fw-bold">Open Your Vault</h3>
+                    <p class="text-secondary">Enter your passkey to view your private files.</p>
+                </div>
+
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label small text-secondary">ENTER PASSKEY</label>
+                        <input type="password" class="form-control bg-black text-white border-warning" placeholder="••••••••">
+                    </div>
+                    <button type="submit" class="btn btn-warning w-100 fw-bold">Unlock Storage</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
